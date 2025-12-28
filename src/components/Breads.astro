@@ -1,0 +1,88 @@
+---
+const breads = [
+  {
+    name: "Classico",
+    description: "Il nostro pane madre, crosta croccante e mollica alveolata. Semplicità perfetta.",
+    accentClass: "bg-earth",
+  },
+  {
+    name: "Cioccolato Fondente",
+    description: "Note intense di cacao 70%, per chi ama i contrasti. Ideale con formaggi stagionati.",
+    accentClass: "bg-clay",
+  },
+  {
+    name: "Peperoncino Calabrese",
+    description: "Un tocco di fuoco mediterraneo. Carattere deciso, persistenza delicata.",
+    accentClass: "bg-earth-dark",
+  },
+  {
+    name: "Bacon Affumicato",
+    description: "Sapore avvolgente e affumicatura naturale. Una coccola rustica.",
+    accentClass: "bg-charcoal-light",
+  },
+  {
+    name: "Olive Taggiasche",
+    description: "L'eccellenza ligure nel nostro impasto. Mediterraneo in ogni morso.",
+    accentClass: "bg-clay",
+  },
+  {
+    name: "Noci e Miele",
+    description: "Dolcezza naturale e croccantezza. Perfetto per la colazione.",
+    accentClass: "bg-earth",
+  },
+];
+---
+
+<section id="pane" class="py-32 texture-overlay">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center space-y-6 mb-20">
+      <p class="text-sm tracking-[0.3em] uppercase text-earth-dark">
+        Le Nostre Creazioni
+      </p>
+      <h2 class="font-display text-5xl md:text-6xl text-charcoal">
+        Il Pane
+      </h2>
+      <p class="text-charcoal-light max-w-2xl mx-auto">
+        Ogni varietà nasce dallo stesso lievito madre, nutrito e curato con passione. 
+        Farine selezionate, lievitazione lenta, cottura nel forno a pietra.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {breads.map((bread, index) => (
+        <article 
+          class="group relative p-8 bg-warm-white hover:bg-sand/50 transition-all duration-500"
+          style={`animation-delay: ${index * 100}ms`}
+        >
+          <!-- Accent line -->
+          <div 
+            class={`absolute top-0 left-0 w-0 group-hover:w-full h-px transition-all duration-500 ${bread.accentClass}`}
+          ></div>
+          
+          <!-- Image placeholder -->
+          <div class="aspect-square bg-sand mb-6 overflow-hidden">
+            <div class="w-full h-full flex items-center justify-center text-clay">
+              <svg class="w-12 h-12 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+          </div>
+          
+          <h3 class="font-display text-2xl text-charcoal mb-3">
+            {bread.name}
+          </h3>
+          
+          <p class="text-sm text-charcoal-light leading-relaxed">
+            {bread.description}
+          </p>
+        </article>
+      ))}
+    </div>
+    
+    <div class="text-center mt-16">
+      <p class="text-sm text-clay italic">
+        * Disponibilità giornaliera limitata. Prenotazioni consigliate.
+      </p>
+    </div>
+  </div>
+</section>

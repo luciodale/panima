@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <!-- Logomark: Stylized grain/seed that forms a subtle "P" shape -->
+  <g id="mark">
+    <!-- Main seed/grain shape - organic, hand-drawn feel -->
+    <path 
+      d="M12 32 C6 28 4 20 8 12 C12 4 20 2 26 6 C30 9 31 14 29 18 C27 22 22 24 18 22 C16 21 15 19 16 17 C17 15 19 14 21 15"
+      stroke="#3D3229" 
+      stroke-width="2" 
+      stroke-linecap="round"
+      fill="none"
+    />
+    <!-- Inner life/soul spiral - represents fermentation -->
+    <path 
+      d="M14 24 C12 20 14 16 18 16 C20 16 21 18 20 20"
+      stroke="#C4A67C" 
+      stroke-width="1.5" 
+      stroke-linecap="round"
+      fill="none"
+    />
+  </g>
+  
+  <!-- Wordmark -->
+  <text 
+    x="40" 
+    y="28" 
+    font-family="Georgia, 'Cormorant Garamond', serif" 
+    font-size="22" 
+    font-weight="400"
+    letter-spacing="3"
+    fill="#3D3229"
+  >PANIMA</text>
+  
+  <!-- Subtle tagline -->
+  <text 
+    x="40" 
+    y="36" 
+    font-family="system-ui, sans-serif" 
+    font-size="5" 
+    font-weight="300"
+    letter-spacing="2"
+    fill="#8B7355"
+  >MICRO FORNO</text>
+</svg>

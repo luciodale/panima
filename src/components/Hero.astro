@@ -1,0 +1,76 @@
+---
+---
+
+<section class="relative min-h-screen flex items-center justify-center texture-overlay overflow-hidden">
+  <!-- Decorative background elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-1/4 -left-32 w-96 h-96 bg-sand/40 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 -right-32 w-80 h-80 bg-earth/15 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-dust/20 rounded-full blur-3xl"></div>
+  </div>
+  
+  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+    <div class="space-y-8">
+      <!-- Small tagline -->
+      <p class="text-sm tracking-[0.3em] uppercase text-clay animate-fade-in-up">
+        Micro Forno Artigianale
+      </p>
+      
+      <!-- Main title -->
+      <h1 class="font-display text-6xl md:text-8xl lg:text-9xl text-charcoal leading-none animate-fade-in-up animation-delay-100">
+        Panima
+      </h1>
+      
+      <!-- Subtitle -->
+      <p class="font-display text-2xl md:text-3xl text-charcoal-light italic max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
+        L'arte del lievito madre
+      </p>
+      
+      <!-- Description -->
+      <p class="text-base md:text-lg text-charcoal-light max-w-xl mx-auto leading-relaxed animate-fade-in-up animation-delay-300">
+        Pane fatto a mano con lievito madre, gusti unici e momenti da condividere. Benvenuti nel nostro piccolo angolo di autenticità.
+      </p>
+      
+      <!-- CTA -->
+      <div class="pt-6 animate-fade-in-up animation-delay-400">
+        <a 
+          href="#pane" 
+          class="inline-flex items-center gap-3 px-8 py-4 bg-charcoal text-cream text-sm tracking-widest uppercase hover:bg-earth-dark transition-all duration-300 group"
+        >
+          <span>Scopri il Pane</span>
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+    <div class="w-px h-16 bg-gradient-to-b from-transparent via-clay to-transparent"></div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animation-delay-100 { animation-delay: 0.1s; }
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-300 { animation-delay: 0.3s; }
+  .animation-delay-400 { animation-delay: 0.4s; }
+</style>

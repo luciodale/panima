@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- 
+    Panima Logomark
+    A stylized grain/seed with an inner spiral representing:
+    - The organic shape of a wheat grain (quality ingredients)
+    - A subtle "P" letterform in the negative space
+    - An inner spiral suggesting fermentation/life/soul (anima)
+    - Hand-drawn quality conveying artisanal authenticity
+  -->
+  
+  <!-- Outer grain shape -->
+  <path 
+    d="M18 42 C8 36 4 24 10 12 C16 2 30 0 38 8 C44 14 44 24 38 30 C32 36 24 36 20 32 C17 29 17 24 20 21 C23 18 28 18 31 21 C33 23 33 26 31 28"
+    stroke="#3D3229" 
+    stroke-width="2.5" 
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+  
+  <!-- Inner soul spiral - the "anima" -->
+  <path 
+    d="M16 34 C12 28 14 20 22 18 C28 17 32 22 30 28 C29 31 26 32 24 30"
+    stroke="#C4A67C" 
+    stroke-width="2" 
+    stroke-linecap="round"
+    fill="none"
+  />
+  
+  <!-- Life dot - center of fermentation -->
+  <circle cx="25" cy="26" r="1.5" fill="#C4A67C"/>
+</svg>
