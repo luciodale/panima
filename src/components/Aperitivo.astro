@@ -1,73 +1,76 @@
 ---
+import Divider from './ui/Divider.astro';
+import SectionHeader from './ui/SectionHeader.astro';
+
 const products = [
-  "Formaggi locali stagionati",
-  "Salumi artigianali",
-  "Olive marinate",
-  "Verdure sott'olio",
-  "Miele di castagno",
-  "Confetture della casa",
+  { name: "Formaggi stagionati", origin: "Produttori locali" },
+  { name: "Salumi artigianali", origin: "Norcineria tradizionale" },
+  { name: "Olive marinate", origin: "Liguria" },
+  { name: "Verdure sott'olio", origin: "Orto proprio" },
+  { name: "Miele di castagno", origin: "Apicoltura locale" },
+  { name: "Confetture", origin: "Fatte in casa" },
 ];
 ---
 
-<section id="aperitivo" class="py-32 bg-sand/40 grain">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
+<section id="aperitivo" class="pt-0 pb-20 md:py-32 lg:py-40 bg-sand/30 grain overflow-hidden">
+  <div class="max-w-7xl mx-auto md:px-6">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-20">
       <!-- Content -->
-      <div class="space-y-8 order-2 lg:order-1">
-        <p class="text-sm tracking-[0.3em] uppercase text-earth-dark">
-          Un Momento Speciale
-        </p>
-        
-        <h2 class="font-display text-5xl md:text-6xl text-charcoal">
-          L'Aperitivo
-        </h2>
-        
-        <div class="space-y-6 text-charcoal-light">
-          <p>
-            Nel nostro piccolo spazio, pochi tavoli accolgono chi cerca un'esperienza autentica. L'aperitivo da Panima non è solo un momento — è una celebrazione dei sapori semplici e genuini.
+      <div class="lg:col-span-6 order-2 lg:order-1 px-6 md:px-0">
+        <div class="space-y-8 md:space-y-10 reveal-stagger">
+          <SectionHeader tagline="Un Momento Speciale" title="L'Aperitivo" />
+          
+          <Divider />
+          
+          <p class="text-charcoal-light text-sm md:text-base lg:text-lg leading-relaxed max-w-md">
+            Pochi tavoli, un'esperienza autentica. L'aperitivo da Panima è una celebrazione dei sapori semplici e genuini.
           </p>
-          <p>
-            Accompagniamo i nostri pani con una selezione curata di prodotti tipici, scelti da piccoli produttori locali che condividono la nostra filosofia: qualità senza compromessi.
-          </p>
-        </div>
-        
-        <!-- Products list -->
-        <div class="pt-4">
-          <h3 class="text-sm tracking-widest uppercase text-charcoal mb-4">
-            I nostri accompagnamenti
-          </h3>
-          <ul class="grid grid-cols-2 gap-3">
-            {products.map((product) => (
-              <li class="flex items-center gap-2 text-charcoal-light">
-                <span class="w-1.5 h-1.5 rounded-full bg-earth"></span>
-                <span class="text-sm">{product}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        
-        <!-- Seating info -->
-        <div class="pt-6 border-t border-dust">
-          <p class="text-sm text-clay italic">
-            Solo 12 posti a sedere — prenota il tuo tavolo per assicurarti l'esperienza completa.
-          </p>
-        </div>
-      </div>
-      
-      <!-- Image placeholder -->
-      <div class="relative order-1 lg:order-2">
-        <div class="aspect-[3/4] bg-cream-dark overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-center space-y-4 text-clay">
-              <svg class="w-16 h-16 mx-auto opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <p class="text-sm tracking-wide">L'ambiente dell'aperitivo</p>
+          
+          <!-- Products grid -->
+          <div class="pt-2 md:pt-4">
+            <h3 class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-charcoal mb-4 md:mb-6">
+              Accompagnamenti
+            </h3>
+            <div class="grid grid-cols-2 gap-x-6 md:gap-x-8 gap-y-3 md:gap-y-4">
+              {products.map((product) => (
+                <div class="group">
+                  <p class="text-sm md:text-base text-charcoal font-medium group-hover:text-earth-dark transition-colors">
+                    {product.name}
+                  </p>
+                  <p class="text-[10px] md:text-xs text-clay mt-0.5">{product.origin}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <!-- Seating callout -->
+          <div class="pt-6 md:pt-8 border-t border-dust/50">
+            <div class="flex items-start gap-3 md:gap-4">
+              <span class="font-display text-4xl md:text-5xl text-earth leading-none">12</span>
+              <div>
+                <p class="text-sm md:text-base text-charcoal font-medium">posti a sedere</p>
+                <p class="text-xs md:text-sm text-charcoal-light mt-1">
+                  Prenota per l'esperienza completa
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Decorative element -->
-        <div class="absolute -top-6 -left-6 w-32 h-32 border border-earth/30 -z-10"></div>
+      </div>
+      
+      <!-- Image - full bleed on mobile -->
+      <div class="lg:col-span-6 order-1 lg:order-2 reveal">
+        <div class="relative">
+          <div class="aspect-square md:aspect-[4/5] overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" 
+              alt="L'ambiente dell'aperitivo"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="hidden md:block absolute -top-6 -left-6 w-32 h-32 border border-earth/20 -z-10"></div>
+        </div>
       </div>
     </div>
   </div>

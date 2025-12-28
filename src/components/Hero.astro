@@ -1,76 +1,84 @@
 ---
+import ArrowLink from './ui/ArrowLink.astro';
 ---
 
 <section class="relative min-h-screen flex items-center justify-center texture-overlay overflow-hidden">
-  <!-- Decorative background elements -->
-  <div class="absolute inset-0 overflow-hidden">
-    <div class="absolute top-1/4 -left-32 w-96 h-96 bg-sand/40 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-1/4 -right-32 w-80 h-80 bg-earth/15 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-dust/20 rounded-full blur-3xl"></div>
+  <!-- Subtle animated background gradients -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-1/4 -left-1/4 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-sand/30 rounded-full blur-[100px] animate-float"></div>
+    <div class="absolute bottom-1/4 -right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-earth/10 rounded-full blur-[100px] animate-float-delayed"></div>
   </div>
   
-  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
-    <div class="space-y-8">
-      <!-- Small tagline -->
-      <p class="text-sm tracking-[0.3em] uppercase text-clay animate-fade-in-up">
-        Micro Forno Artigianale
-      </p>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+    <div class="space-y-6">
+      <!-- Small tagline with line -->
+      <div class="flex items-center justify-center gap-4 hero-reveal" style="--delay: 0ms;">
+        <div class="w-8 md:w-12 h-px bg-earth/50"></div>
+        <p class="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase text-clay font-medium">
+          Micro Forno Artigianale
+        </p>
+        <div class="w-8 md:w-12 h-px bg-earth/50"></div>
+      </div>
       
       <!-- Main title -->
-      <h1 class="font-display text-6xl md:text-8xl lg:text-9xl text-charcoal leading-none animate-fade-in-up animation-delay-100">
+      <h1 class="text-display font-display text-charcoal hero-reveal" style="--delay: 150ms;">
         Panima
       </h1>
       
       <!-- Subtitle -->
-      <p class="font-display text-2xl md:text-3xl text-charcoal-light italic max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
+      <p class="font-display text-xl md:text-4xl text-charcoal-light italic hero-reveal" style="--delay: 300ms;">
         L'arte del lievito madre
       </p>
       
+      <!-- Divider -->
+      <div class="flex justify-center hero-reveal" style="--delay: 400ms;">
+        <div class="w-16 h-px bg-linear-to-r from-transparent via-earth to-transparent"></div>
+      </div>
+      
       <!-- Description -->
-      <p class="text-base md:text-lg text-charcoal-light max-w-xl mx-auto leading-relaxed animate-fade-in-up animation-delay-300">
-        Pane fatto a mano con lievito madre, gusti unici e momenti da condividere. Benvenuti nel nostro piccolo angolo di autenticità.
+      <p class="text-sm md:text-lg text-charcoal-light/80 max-w-md mx-auto hero-reveal" style="--delay: 500ms;">
+        Pane fatto a mano, gusti unici, momenti autentici.
       </p>
       
       <!-- CTA -->
-      <div class="pt-6 animate-fade-in-up animation-delay-400">
-        <a 
-          href="#pane" 
-          class="inline-flex items-center gap-3 px-8 py-4 bg-charcoal text-cream text-sm tracking-widest uppercase hover:bg-earth-dark transition-all duration-300 group"
-        >
-          <span>Scopri il Pane</span>
-          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
+      <div class="pt-6 md:pt-8 hero-reveal flex justify-center" style="--delay: 600ms;">
+        <ArrowLink href="#pane" label="Scopri il pane" />
       </div>
     </div>
-  </div>
-  
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-    <div class="w-px h-16 bg-gradient-to-b from-transparent via-clay to-transparent"></div>
   </div>
 </section>
 
 <style>
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -30px) scale(1.05); }
+  }
+  
+  @keyframes float-delayed {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-20px, 20px) scale(1.03); }
+  }
+  
+  .animate-float {
+    animation: float 20s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float-delayed 25s ease-in-out infinite;
+    animation-delay: -5s;
+  }
+  
+  .hero-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: var(--delay, 0ms);
+  }
+  
+  @keyframes heroReveal {
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  
-  .animate-fade-in-up {
-    animation: fade-in-up 0.8s ease-out forwards;
-    opacity: 0;
-  }
-  
-  .animation-delay-100 { animation-delay: 0.1s; }
-  .animation-delay-200 { animation-delay: 0.2s; }
-  .animation-delay-300 { animation-delay: 0.3s; }
-  .animation-delay-400 { animation-delay: 0.4s; }
 </style>

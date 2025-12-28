@@ -1,42 +1,60 @@
 ---
+import SectionHeader from './ui/SectionHeader.astro';
+
 const images = [
-  { aspect: "aspect-[4/3]", label: "Il forno a pietra" },
-  { aspect: "aspect-square", label: "Pane appena sfornato" },
-  { aspect: "aspect-[3/4]", label: "Lievito madre" },
-  { aspect: "aspect-[3/4]", label: "Ingredienti selezionati" },
-  { aspect: "aspect-square", label: "L'interno del locale" },
-  { aspect: "aspect-[4/3]", label: "Dettagli artigianali" },
+  { 
+    label: "Il forno a pietra",
+    image: "https://images.unsplash.com/photo-1571066811602-716837d681de?w=1200&q=80"
+  },
+  { 
+    label: "Pane appena sfornato",
+    image: "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=1200&q=80"
+  },
+  { 
+    label: "Lievito madre",
+    image: "https://images.unsplash.com/photo-1586765677067-f8030bd8e303?w=1200&q=80"
+  },
+  { 
+    label: "Ingredienti",
+    image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=1200&q=80"
+  },
+  { 
+    label: "L'interno",
+    image: "https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=1200&q=80"
+  },
 ];
 ---
 
-<section class="py-32 bg-warm-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center space-y-6 mb-16">
-      <p class="text-sm tracking-[0.3em] uppercase text-earth-dark">
-        Dietro le Quinte
-      </p>
-      <h2 class="font-display text-5xl md:text-6xl text-charcoal">
-        Galleria
-      </h2>
+<section class="py-20 md:py-32 lg:py-40 bg-warm-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 mb-10 md:mb-16">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8 reveal">
+      <SectionHeader tagline="Dietro le Quinte" title="Galleria" />
+      <a href="#" class="group inline-flex items-center gap-2 md:gap-3 text-charcoal-light hover:text-charcoal transition-colors">
+        <span class="text-xs md:text-sm tracking-wider">@panima.forno</span>
+        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
     </div>
-    
-    <!-- Masonry-style grid -->
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      {images.map((image, index) => (
-        <div 
-          class={`${image.aspect} bg-sand overflow-hidden group cursor-pointer ${index === 2 || index === 3 ? 'md:row-span-2' : ''}`}
-        >
-          <div class="w-full h-full flex items-center justify-center text-clay relative">
-            <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-all duration-500"></div>
-            <div class="text-center space-y-2 z-10">
-              <svg class="w-10 h-10 mx-auto opacity-40 group-hover:opacity-60 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <p class="text-xs tracking-wide opacity-0 group-hover:opacity-100 transition-opacity">{image.label}</p>
-            </div>
-          </div>
+  </div>
+  
+  <!-- Horizontal scroll gallery -->
+  <div class="horizontal-scroll gap-4 md:gap-6 px-6 reveal">
+    {images.map((image, index) => (
+      <figure class="group relative flex-shrink-0 w-[80vw] md:w-[50vw] lg:w-[40vw] overflow-hidden">
+        <div class="aspect-3/4 md:aspect-4/5 overflow-hidden bg-sand">
+          <img 
+            src={image.image}
+            alt={image.label}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+            loading="lazy"
+          />
         </div>
-      ))}
-    </div>
+        <figcaption class="mt-4 flex items-center justify-between">
+          <span class="text-xs md:text-sm text-charcoal-light tracking-wide">{image.label}</span>
+          <span class="text-xs text-clay font-display">{String(index + 1).padStart(2, '0')}</span>
+        </figcaption>
+      </figure>
+    ))}
   </div>
 </section>
