@@ -5,37 +5,31 @@ const breads = [
   {
     name: "Classico",
     description: "Crosta croccante, mollica alveolata. Semplicità perfetta.",
-    number: "01",
     image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
   },
   {
     name: "Cioccolato",
     description: "Note intense di cacao 70%. Ideale con formaggi stagionati.",
-    number: "02",
-    image: "https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1534620808146-d33bb39128b2?w=600&q=80",
   },
   {
     name: "Peperoncino",
     description: "Fuoco mediterraneo. Carattere deciso, persistenza delicata.",
-    number: "03",
     image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80",
   },
   {
     name: "Bacon",
     description: "Sapore avvolgente e affumicatura naturale.",
-    number: "04",
     image: "https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=600&q=80",
   },
   {
     name: "Olive",
     description: "Taggiasche nel nostro impasto. Mediterraneo in ogni morso.",
-    number: "05",
     image: "https://images.unsplash.com/photo-1574085733277-851d9d856a3a?w=600&q=80",
   },
   {
     name: "Noci e Miele",
     description: "Dolcezza naturale e croccantezza. Perfetto a colazione.",
-    number: "06",
     image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80",
   },
 ];
@@ -52,34 +46,30 @@ const breads = [
   </div>
   
   <!-- Horizontal scroll container -->
-  <div class="horizontal-scroll gap-4 md:gap-6 ml-0 sm:ml-6 pb-6 md:pb-8 reveal">
+  <div class="horizontal-scroll gap-5 md:gap-8 px-6 pb-6 md:pb-8 reveal">
     {breads.map((bread) => (
-      <article class="group relative w-[85vw] md:w-[360px] lg:w-[400px] shrink-0 hover-lift h-auto">
-        <div class="relative bg-warm-white h-full flex flex-col">
-          <span class="hidden md:block absolute top-0 right-4 font-display text-[120px] leading-none text-sand/40 select-none pointer-events-none group-hover:text-earth/15 transition-colors duration-500">
-            {bread.number}
-          </span>
+      <article class="group relative w-[75vw] md:w-[320px] lg:w-[360px] shrink-0">
+        <!-- Image with overlay -->
+        <div class="relative aspect-3/4 overflow-hidden bg-sand">
+          <img 
+            src={bread.image}
+            alt={bread.name}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+            loading="lazy"
+          />
+          <!-- Gradient overlay - stronger for readability -->
+          <div class="absolute inset-0 bg-linear-to-t from-charcoal/80 via-charcoal/30 to-charcoal/5"></div>
           
-          <div class="relative z-10 aspect-4/3 bg-sand overflow-hidden shrink-0">
-            <img 
-              src={bread.image}
-              alt={bread.name}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              loading="lazy"
-            />
-            <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/5 transition-colors duration-500"></div>
-          </div>
-          
-          <div class="relative z-10 p-6 md:p-8 flex flex-col grow">
-            <h3 class="font-display text-2xl md:text-3xl text-charcoal mb-2 md:mb-3 group-hover:text-earth-dark transition-colors duration-300">
+          <!-- Content overlay -->
+          <div class="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+            <!-- Gold accent line -->
+            <div class="w-8 h-px bg-gold/60 mb-4 group-hover:w-12 transition-all duration-500"></div>
+            <h3 class="font-display text-3xl md:text-4xl text-cream mb-2">
               {bread.name}
             </h3>
-            <p class="text-xs md:text-sm text-charcoal-light leading-relaxed grow">
+            <p class="text-sm text-cream/80 leading-relaxed">
               {bread.description}
             </p>
-            <div class="mt-4 md:mt-6 h-px bg-sand">
-              <div class="h-full w-0 group-hover:w-full bg-earth transition-all duration-700"></div>
-            </div>
           </div>
         </div>
       </article>
