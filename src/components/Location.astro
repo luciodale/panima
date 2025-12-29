@@ -1,0 +1,44 @@
+---
+import SectionHeader from './ui/SectionHeader.astro';
+---
+
+<section class="py-20 md:py-32 lg:py-40 bg-warm-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-10 md:mb-16 reveal">
+      <SectionHeader tagline="Dove Nasce il Pane" title="Il Laboratorio" />
+    </div>
+    
+    <!-- Images -->
+    <div class="flex flex-col md:flex-row gap-5 md:gap-8">
+      <div class="md:w-7/12 reveal">
+        <div class="h-64 md:h-64 lg:h-80 xl:h-96 overflow-hidden bg-sand">
+          <img 
+            src="https://images.unsplash.com/photo-1571066811602-716837d681de?w=1200&q=80"
+            alt="Il nostro forno"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <div class="md:w-5/12 reveal">
+        <div class="h-64 md:h-64 lg:h-80 xl:h-96 overflow-hidden bg-sand">
+          <img 
+            src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=800&q=80"
+            alt="Pane in lavorazione"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+    
+    <!-- Caption -->
+    <div class="mt-8 md:mt-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4 reveal">
+      <p class="text-charcoal-light text-sm md:text-base max-w-md">
+        Un piccolo spazio dove tradizione e passione si incontrano ogni giorno.
+      </p>
+      <span class="text-gold text-xs tracking-[0.3em] uppercase">Roma, Italia</span>
+    </div>
+  </div>
+</section>
+

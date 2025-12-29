@@ -7,25 +7,13 @@ const currentYear = new Date().getFullYear();
     <!-- Top section -->
     <div class="flex flex-col items-center text-center mb-10 md:mb-16">
       <!-- Logo mark -->
-      <svg class="w-12 h-12 md:w-14 md:h-14 mb-4 md:mb-6" viewBox="0 0 32 32" fill="none">
-        <path 
-          d="M12 28 C5 24 3 16 7 8 C11 1 20 0 25 5 C29 9 29 16 25 20 C21 24 16 24 13 21 C11 19 11 16 13 14 C15 12 19 12 21 14"
-          stroke="currentColor" 
-          stroke-width="2" 
-          stroke-linecap="round"
-          class="text-cream/80"
-        />
-        <path 
-          d="M11 23 C8 19 10 13 15 12 C19 11 21 15 20 19"
-          stroke="currentColor"
-          stroke-width="1.5" 
-          stroke-linecap="round"
-          class="text-earth"
-        />
-        <circle cx="17" cy="17" r="1" class="fill-earth"/>
-      </svg>
+      <img 
+        src="/panima-illustration.svg" 
+        alt="Pànima logo" 
+        class="w-12 h-16 md:w-16 md:h-20 mb-4 md:mb-6"
+      />
       
-      <h2 class="font-display text-3xl md:text-5xl mb-2 md:mb-3">Panima</h2>
+      <h2 class="font-display text-3xl md:text-5xl mb-2 md:mb-3">Pànima</h2>
       <p class="text-dust text-xs md:text-sm tracking-widest uppercase">Micro Forno Artigianale</p>
     </div>
     
@@ -60,19 +48,25 @@ const currentYear = new Date().getFullYear();
       
       <!-- Copyright -->
       <p class="text-xs md:text-sm text-dust/60 order-3 md:order-2">
-        © {currentYear} Panima
+        © {currentYear} Pànima
       </p>
       
       <!-- Back to top -->
-      <a 
-        href="#" 
-        class="group flex items-center gap-2 text-dust hover:text-cream transition-colors order-1 md:order-3"
+      <button 
+        id="back-to-top"
+        class="group flex items-center gap-2 text-dust hover:text-cream transition-colors order-1 md:order-3 cursor-pointer"
       >
         <span class="text-xs tracking-wider uppercase">Torna su</span>
         <svg class="w-4 h-4 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
-      </a>
+      </button>
     </div>
   </div>
 </footer>
+
+<script>
+  document.getElementById('back-to-top')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
