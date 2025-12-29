@@ -8,7 +8,7 @@ const navLinks = [
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-700" id="header">
-  <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6 flex items-center justify-between relative z-50">
     <a href="/" class="group flex items-center gap-2 md:gap-3">
       <img 
         src="/panima-illustration.svg" 
@@ -37,7 +37,7 @@ const navLinks = [
     </nav>
     
     <button 
-      class="md:hidden p-2 -mr-2 text-charcoal hover:text-earth-dark transition-colors"
+      class="md:hidden p-2 -mr-2 text-charcoal hover:text-earth-dark transition-colors relative z-50"
       id="mobile-menu-toggle"
       aria-label="Toggle menu"
     >
@@ -49,33 +49,33 @@ const navLinks = [
       </svg>
     </button>
   </div>
-  
-  <!-- Mobile Menu - Full screen -->
-  <div class="md:hidden fixed inset-0 bg-cream z-40 hidden flex-col" id="mobile-menu">
-    <div class="flex-1 flex flex-col items-center justify-center px-6">
-      <nav>
-        <ul class="flex flex-col items-center gap-8">
-          {navLinks.map((link, index) => (
-            <li class="mobile-menu-item" style={`--index: ${index}`}>
-              <a 
-                href={link.href}
-                class="block text-3xl font-display text-charcoal hover:text-earth-dark transition-colors"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
-    
-    <!-- Mobile menu footer -->
-    <div class="p-6 text-center border-t border-sand">
-      <p class="text-sm text-charcoal-light">ciao@panima.it</p>
-      <p class="text-xs text-clay mt-1">Roma, Italia</p>
-    </div>
-  </div>
 </header>
+
+<!-- Mobile Menu - Full screen overlay -->
+<div class="md:hidden fixed inset-0 bg-cream z-[45] hidden flex-col" id="mobile-menu">
+  <div class="flex-1 flex flex-col items-center justify-center px-6 pt-20">
+    <nav>
+      <ul class="flex flex-col items-center gap-8">
+        {navLinks.map((link, index) => (
+          <li class="mobile-menu-item" style={`--index: ${index}`}>
+            <a 
+              href={link.href}
+              class="block text-3xl font-display text-charcoal hover:text-earth-dark transition-colors"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+  
+  <!-- Mobile menu footer -->
+  <div class="p-6 text-center border-t border-sand">
+    <p class="text-sm text-charcoal-light">ciao@panima.it</p>
+    <p class="text-xs text-clay mt-1">Roma, Italia</p>
+  </div>
+</div>
 
 <style>
   .mobile-menu-item {

@@ -11,8 +11,17 @@ import ArrowLink from './ui/ArrowLink.astro';
   
   <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
     <div class="space-y-6">
+      <!-- Illustration -->
+      <div class="flex justify-center hero-reveal" style="--delay: 0ms;">
+        <img 
+          src="/panima-illustration.svg" 
+          alt="" 
+          class="w-20 h-24 md:w-28 md:h-36"
+        />
+      </div>
+      
       <!-- Small tagline with line -->
-      <div class="flex items-center justify-center gap-4 hero-reveal" style="--delay: 0ms;">
+      <div class="flex items-center justify-center gap-4 hero-reveal" style="--delay: 100ms;">
         <div class="w-8 md:w-12 h-px bg-earth/50"></div>
         <p class="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase text-clay font-medium">
           Micro Forno Artigianale
@@ -21,27 +30,27 @@ import ArrowLink from './ui/ArrowLink.astro';
       </div>
       
       <!-- Main title -->
-      <h1 class="text-display font-display text-charcoal hero-reveal" style="--delay: 150ms;">
+      <h1 class="text-display font-display text-charcoal hero-reveal" style="--delay: 200ms;">
         Pànima
       </h1>
       
       <!-- Subtitle -->
-      <p class="font-display text-xl md:text-4xl text-charcoal-light italic hero-reveal" style="--delay: 300ms;">
+      <p class="font-display text-xl md:text-4xl text-charcoal-light italic hero-reveal" style="--delay: 350ms;">
         L'arte del lievito madre
       </p>
       
       <!-- Divider -->
-      <div class="flex justify-center hero-reveal" style="--delay: 400ms;">
+      <div class="flex justify-center hero-reveal" style="--delay: 450ms;">
         <div class="w-16 h-px bg-linear-to-r from-transparent via-earth to-transparent"></div>
       </div>
       
       <!-- Description -->
-      <p class="text-sm md:text-lg text-charcoal-light/80 max-w-md mx-auto hero-reveal" style="--delay: 500ms;">
+      <p class="text-sm md:text-lg text-charcoal-light/80 max-w-md mx-auto hero-reveal" style="--delay: 550ms;">
         Pane fatto a mano, gusti unici, momenti autentici.
       </p>
       
       <!-- CTA -->
-      <div class="pt-6 md:pt-8 hero-reveal flex justify-center" style="--delay: 600ms;">
+      <div class="pt-6 md:pt-8 hero-reveal flex justify-center" style="--delay: 650ms;">
         <ArrowLink href="#pane" label="Scopri il pane" />
       </div>
     </div>

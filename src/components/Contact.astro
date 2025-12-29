@@ -2,10 +2,10 @@
 import SectionHeader from './ui/SectionHeader.astro';
 
 const hours = [
-  { day: "Mar - Ven", time: "7:30 – 14:00 · 17:00 – 20:00" },
-  { day: "Sabato", time: "8:00 – 14:00 · 17:00 – 21:00" },
-  { day: "Domenica", time: "8:00 – 13:00" },
-  { day: "Lunedì", time: "Chiuso" },
+  { day: "Mar - Ven:", time: "7:30 – 14:00 · 17:00 – 20:00" },
+  { day: "Sabato:", time: "8:00 – 14:00 · 17:00 – 21:00" },
+  { day: "Domenica:", time: "8:00 – 13:00" },
+  { day: "Lunedì:", time: "Chiuso" },
 ];
 ---
 
@@ -49,13 +49,12 @@ const hours = [
         </svg>
         <div>
           <h3 class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-charcoal mb-3 md:mb-4">Orari</h3>
-          <ul class="space-y-1 md:space-y-2">
+          <ul class="space-y-0.5 md:space-y-1">
             {hours.map((item) => (
               <li class="text-sm md:text-base text-charcoal-light">
                 <span class="text-charcoal">{item.day}</span>
-                <span class="mx-2 text-charcoal-light hidden md:inline">·</span>
                 <br class="md:hidden" />
-                <span class="text-xs md:text-sm">{item.time}</span>
+                <span class="text-xs md:text-sm"> {item.time}</span>
               </li>
             ))}
           </ul>
