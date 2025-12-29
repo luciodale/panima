@@ -8,12 +8,12 @@ import SectionHeader from './ui/SectionHeader.astro';
       <SectionHeader tagline="Dove Nasce il Pane" title="Il Laboratorio" />
     </div>
     
-    <!-- Images -->
+    <!-- Media grid -->
     <div class="flex flex-col md:flex-row gap-5 md:gap-8">
+      <!-- Main image - wider -->
       <div class="md:w-7/12 reveal">
-        <div class="h-64 md:h-72 lg:h-96 xl:h-[28rem] 2xl:h-[32rem] overflow-hidden bg-sand">
+        <div class="h-64 md:h-[28rem] lg:h-[32rem] xl:h-[36rem] overflow-hidden bg-sand">
           <img 
-          
             src="https://images.unsplash.com/photo-1549488344-cab7d6164423?w=1200&q=80"
             alt="Il nostro forno"
             class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
@@ -21,15 +21,17 @@ import SectionHeader from './ui/SectionHeader.astro';
           />
         </div>
       </div>
+      <!-- Video - portrait, narrower -->
       <div class="md:w-5/12 reveal">
-        <div class="h-64 md:h-72 lg:h-96 xl:h-[28rem] 2xl:h-[32rem] overflow-hidden bg-sand">
-          <img 
-          
-            src="https://images.unsplash.com/photo-1607151815172-254f6b0c9b4b?w=800&q=80"
-            alt="Pane in lavorazione"
-            class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
-            loading="lazy"
-          />
+        <div class="h-64 md:h-[28rem] lg:h-[32rem] xl:h-[36rem] overflow-hidden bg-sand">
+          <video 
+            src="/videos/sourdough.mov"
+            autoplay
+            loop
+            muted
+            playsinline
+            class="w-full h-full object-cover"
+          ></video>
         </div>
       </div>
     </div>
