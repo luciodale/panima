@@ -6,11 +6,21 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "wrangler d1 migrations apply panima-db --remote",
+    "db:migrate:local": "wrangler d1 migrations apply panima-db --local",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.6",
+    "drizzle-orm": "^0.45.1",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.31.8",
+    "wrangler": "^4.54.0"
   }
 }
