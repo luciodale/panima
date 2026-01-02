@@ -47,6 +47,7 @@ import ArrowLink from "./ui/ArrowLink.astro";
         <div class="w-8 md:w-12 h-px bg-gold/50"></div>
         <p
           class="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase text-amber font-medium"
+          data-i18n="hero.tagline"
         >
           Micro Forno Artigianale
         </p>
@@ -57,6 +58,7 @@ import ArrowLink from "./ui/ArrowLink.astro";
       <p
         class="font-display text-xl md:text-4xl text-charcoal-light italic hero-reveal"
         style="--delay: 300ms;"
+        data-i18n="hero.subtitle"
       >
         L'arte del lievito madre
       </p>
@@ -73,6 +75,7 @@ import ArrowLink from "./ui/ArrowLink.astro";
       <p
         class="text-sm md:text-lg text-charcoal-light/80 max-w-md mx-auto hero-reveal"
         style="--delay: 500ms;"
+        data-i18n="hero.description"
       >
         Pane fatto a mano, gusti unici, momenti autentici.
       </p>
@@ -82,7 +85,7 @@ import ArrowLink from "./ui/ArrowLink.astro";
         class="pt-6 md:pt-8 hero-reveal flex justify-center"
         style="--delay: 600ms;"
       >
-        <ArrowLink href="#pane" label="Scopri il pane" />
+        <ArrowLink href="#pane" i18nKey="hero.cta" label="Scopri il pane" />
       </div>
     </div>
   </div>

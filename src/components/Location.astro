@@ -8,7 +8,12 @@ import SectionHeader from "./ui/SectionHeader.astro";
 >
   <div class="max-w-7xl mx-auto px-6">
     <div class="mb-10 md:mb-16 reveal">
-      <SectionHeader tagline="Dove Nasce il Pane" title="Il Laboratorio" />
+      <SectionHeader
+        tagline="Dove Nasce il Pane"
+        taglineI18n="location.tagline"
+        title="Il Laboratorio"
+        titleI18n="location.title"
+      />
     </div>
 
     <!-- Media grid -->
@@ -46,13 +51,19 @@ import SectionHeader from "./ui/SectionHeader.astro";
     <div
       class="mt-8 md:mt-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4 reveal"
     >
-      <p class="text-charcoal-light text-sm md:text-base max-w-md">
-        Un piccolo spazio dove tradizione e passione si incontrano ogni giorno.
-        Qui il pane prende forna, lievita lentamente e diventa esperienza.
-      </p>
-      <span class="text-gold text-xs tracking-[0.3em] uppercase"
-        >Ortona, Italia</span
+      <p
+        class="text-charcoal-light text-sm md:text-base max-w-md"
+        data-i18n="location.description"
       >
+        Un piccolo spazio dove tradizione e passione si incontrano ogni giorno.
+        Qui il pane prende forma, lievita lentamente e diventa esperienza.
+      </p>
+      <span
+        class="text-gold text-xs tracking-[0.3em] uppercase"
+        data-i18n="location.place"
+      >
+        Ortona, Italia
+      </span>
     </div>
   </div>
 </section>

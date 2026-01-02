@@ -1,76 +1,190 @@
 ---
-const navLinks = [
-  { href: "#chi-siamo", label: "Chi Siamo" },
-  { href: "#pane", label: "Il Pane" },
-  { href: "#aperitivo", label: "Aperitivo" },
-  { href: "#contatti", label: "Contatti" },
-];
+
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-700" id="header">
-  <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6 flex items-center justify-between relative z-50">
+<header
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-700"
+  id="header"
+>
+  <div
+    class="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6 flex items-center justify-between relative z-50"
+  >
     <a href="/" class="group">
-      <img 
-        src="/panima.svg" 
-        alt="Panima" 
+      <img
+        src="/panima.svg"
+        alt="Panima"
         class="h-10 md:h-12 w-auto group-hover:opacity-80 transition-opacity duration-300"
       />
     </a>
-    
-    <nav class="hidden md:block">
-      <ul class="flex items-center gap-8 lg:gap-12">
-        {navLinks.map((link) => (
+
+    <div class="hidden md:flex items-center gap-8 lg:gap-12">
+      <nav>
+        <ul class="flex items-center gap-8 lg:gap-12">
           <li>
-            <a 
-              href={link.href}
+            <a
+              href="#chi-siamo"
               class="relative text-xs tracking-[0.2em] uppercase text-charcoal-light hover:text-charcoal transition-colors duration-300 py-2"
             >
-              <span>{link.label}</span>
-              <span class="absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-500 hover:w-full"></span>
+              <span data-i18n="nav.about">Chi Siamo</span>
+              <span
+                class="absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-500 hover:w-full"
+              ></span>
             </a>
           </li>
-        ))}
-      </ul>
-    </nav>
-    
-    <button 
+          <li>
+            <a
+              href="#pane"
+              class="relative text-xs tracking-[0.2em] uppercase text-charcoal-light hover:text-charcoal transition-colors duration-300 py-2"
+            >
+              <span data-i18n="nav.bread">Il Pane</span>
+              <span
+                class="absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-500 hover:w-full"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#aperitivo"
+              class="relative text-xs tracking-[0.2em] uppercase text-charcoal-light hover:text-charcoal transition-colors duration-300 py-2"
+            >
+              <span data-i18n="nav.aperitivo">Aperitivo</span>
+              <span
+                class="absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-500 hover:w-full"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contatti"
+              class="relative text-xs tracking-[0.2em] uppercase text-charcoal-light hover:text-charcoal transition-colors duration-300 py-2"
+            >
+              <span data-i18n="nav.contact">Contatti</span>
+              <span
+                class="absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-500 hover:w-full"
+              ></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Language Switcher -->
+      <div class="lang-switch flex items-center gap-1 text-xs tracking-wider">
+        <button
+          data-lang="it"
+          class="px-2 py-1 text-charcoal-light hover:text-charcoal transition-colors is-active"
+        >
+          IT
+        </button>
+        <span class="text-charcoal-light/40">|</span>
+        <button
+          data-lang="en"
+          class="px-2 py-1 text-charcoal-light hover:text-charcoal transition-colors"
+        >
+          EN
+        </button>
+      </div>
+    </div>
+
+    <button
       class="md:hidden p-2 -mr-2 text-charcoal hover:text-amber transition-colors relative z-50"
       id="mobile-menu-toggle"
       aria-label="Toggle menu"
     >
-      <svg class="w-6 h-6 menu-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+      <svg
+        class="w-6 h-6 menu-open"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
-      <svg class="w-6 h-6 menu-close hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+      <svg
+        class="w-6 h-6 menu-close hidden"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
   </div>
 </header>
 
 <!-- Mobile Menu - Full screen overlay -->
-<div class="md:hidden fixed inset-0 bg-cream z-45 hidden flex-col" id="mobile-menu">
+<div
+  class="md:hidden fixed inset-0 bg-cream z-45 hidden flex-col"
+  id="mobile-menu"
+>
   <div class="flex-1 flex flex-col items-center justify-center px-6 pt-20">
     <nav>
       <ul class="flex flex-col items-center gap-8">
-        {navLinks.map((link, index) => (
-          <li class="mobile-menu-item" style={`--index: ${index}`}>
-            <a 
-              href={link.href}
-              class="block text-3xl font-display text-charcoal hover:text-amber transition-colors"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
+        <li class="mobile-menu-item" style="--index: 0">
+          <a
+            href="#chi-siamo"
+            class="block text-3xl font-display text-charcoal hover:text-amber transition-colors"
+          >
+            <span data-i18n="nav.about">Chi Siamo</span>
+          </a>
+        </li>
+        <li class="mobile-menu-item" style="--index: 1">
+          <a
+            href="#pane"
+            class="block text-3xl font-display text-charcoal hover:text-amber transition-colors"
+          >
+            <span data-i18n="nav.bread">Il Pane</span>
+          </a>
+        </li>
+        <li class="mobile-menu-item" style="--index: 2">
+          <a
+            href="#aperitivo"
+            class="block text-3xl font-display text-charcoal hover:text-amber transition-colors"
+          >
+            <span data-i18n="nav.aperitivo">Aperitivo</span>
+          </a>
+        </li>
+        <li class="mobile-menu-item" style="--index: 3">
+          <a
+            href="#contatti"
+            class="block text-3xl font-display text-charcoal hover:text-amber transition-colors"
+          >
+            <span data-i18n="nav.contact">Contatti</span>
+          </a>
+        </li>
       </ul>
     </nav>
+
+    <!-- Mobile Language Switcher -->
+    <div
+      class="lang-switch flex items-center gap-3 mt-12 text-sm tracking-wider"
+    >
+      <button
+        data-lang="it"
+        class="px-3 py-2 text-charcoal-light hover:text-charcoal transition-colors is-active"
+      >
+        Italiano
+      </button>
+      <span class="text-charcoal-light/40">|</span>
+      <button
+        data-lang="en"
+        class="px-3 py-2 text-charcoal-light hover:text-charcoal transition-colors"
+      >
+        English
+      </button>
+    </div>
   </div>
-  
+
   <!-- Mobile menu footer -->
   <div class="p-6 text-center border-t border-sand">
     <p class="text-sm text-charcoal-light">ciao@panima.it</p>
-    <p class="text-xs text-amber mt-1">Roma, Italia</p>
+    <p class="text-xs text-amber mt-1">Ortona, Italia</p>
   </div>
 </div>
 
@@ -79,68 +193,85 @@ const navLinks = [
     opacity: 0;
     transform: translateY(20px);
   }
-  
+
   #mobile-menu.is-open .mobile-menu-item {
     animation: menuItemIn 0.4s ease forwards;
     animation-delay: calc(var(--index) * 0.05s + 0.1s);
   }
-  
+
   @keyframes menuItemIn {
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
+
+  .lang-switch button.is-active {
+    color: var(--color-charcoal);
+    font-weight: 500;
+  }
 </style>
 
 <script>
-  const header = document.getElementById('header');
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuOpen = mobileMenuToggle?.querySelector('.menu-open');
-  const menuClose = mobileMenuToggle?.querySelector('.menu-close');
-  
+  import { switchLanguage, type Language } from "../i18n/i18n";
+
+  const header = document.getElementById("header");
+  const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuOpen = mobileMenuToggle?.querySelector(".menu-open");
+  const menuClose = mobileMenuToggle?.querySelector(".menu-close");
+
   // Header background on scroll
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     const currentScroll = window.scrollY;
-    
+
     if (currentScroll > 100) {
-      header?.classList.add('bg-cream/95', 'backdrop-blur-md');
+      header?.classList.add("bg-cream/95", "backdrop-blur-md");
     } else {
-      header?.classList.remove('bg-cream/95', 'backdrop-blur-md');
+      header?.classList.remove("bg-cream/95", "backdrop-blur-md");
     }
   });
-  
+
   // Mobile menu toggle
-  mobileMenuToggle?.addEventListener('click', () => {
-    const isOpen = mobileMenu?.classList.contains('is-open');
-    
+  mobileMenuToggle?.addEventListener("click", () => {
+    const isOpen = mobileMenu?.classList.contains("is-open");
+
     if (isOpen) {
-      mobileMenu?.classList.remove('is-open');
-      mobileMenu?.classList.add('hidden');
-      mobileMenu?.classList.remove('flex');
-      menuOpen?.classList.remove('hidden');
-      menuClose?.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
+      mobileMenu?.classList.remove("is-open");
+      mobileMenu?.classList.add("hidden");
+      mobileMenu?.classList.remove("flex");
+      menuOpen?.classList.remove("hidden");
+      menuClose?.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
     } else {
-      mobileMenu?.classList.add('is-open');
-      mobileMenu?.classList.remove('hidden');
-      mobileMenu?.classList.add('flex');
-      menuOpen?.classList.add('hidden');
-      menuClose?.classList.remove('hidden');
-      document.body.classList.add('overflow-hidden');
+      mobileMenu?.classList.add("is-open");
+      mobileMenu?.classList.remove("hidden");
+      mobileMenu?.classList.add("flex");
+      menuOpen?.classList.add("hidden");
+      menuClose?.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
     }
   });
-  
+
   // Close mobile menu on link click
-  mobileMenu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu?.classList.remove('is-open');
-      mobileMenu?.classList.add('hidden');
-      mobileMenu?.classList.remove('flex');
-      menuOpen?.classList.remove('hidden');
-      menuClose?.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.remove("is-open");
+      mobileMenu?.classList.add("hidden");
+      mobileMenu?.classList.remove("flex");
+      menuOpen?.classList.remove("hidden");
+      menuClose?.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    });
+  });
+
+  // Language switcher
+  document.querySelectorAll(".lang-switch button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const lang = btn.getAttribute("data-lang") as Language;
+      if (lang) {
+        switchLanguage(lang);
+      }
     });
   });
 </script>

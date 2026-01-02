@@ -23,6 +23,16 @@ const { title, description = "Panima - Micro Forno specializing in artisanal sou
   <body class="min-h-screen antialiased page-enter">
     <slot />
     
+    <!-- i18n Initialization -->
+    <script>
+      import { initI18n } from '../i18n/i18n';
+      
+      // Initialize i18n on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        initI18n();
+      });
+    </script>
+    
     <!-- Scroll Reveal Script -->
     <script>
       // Intersection Observer for scroll-triggered animations
@@ -36,8 +46,6 @@ const { title, description = "Panima - Micro Forno specializing in artisanal sou
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
-            // Optionally stop observing after reveal
-            // revealObserver.unobserve(entry.target);
           }
         });
       }, observerOptions);

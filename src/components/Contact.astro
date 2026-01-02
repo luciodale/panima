@@ -1,12 +1,7 @@
 ---
 import SectionHeader from "./ui/SectionHeader.astro";
 
-const hours = [
-  { day: "Mar - Ven:", time: "7:30 – 14:00 · 17:00 – 20:00" },
-  { day: "Sabato:", time: "8:00 – 14:00 · 17:00 – 21:00" },
-  { day: "Domenica:", time: "8:00 – 13:00" },
-  { day: "Lunedì:", time: "Chiuso" },
-];
+const hours = [{ id: "tueFri" }, { id: "sat" }, { id: "sun" }, { id: "mon" }];
 ---
 
 <section id="contatti" class="py-20 md:py-32 lg:py-40 bg-sand texture-overlay">
@@ -15,7 +10,9 @@ const hours = [
     <div class="mb-12 md:mb-20 reveal">
       <SectionHeader
         tagline="Vieni a Trovarci"
+        taglineI18n="contact.tagline"
         title="Contatti"
+        titleI18n="contact.title"
         align="center"
       />
     </div>
@@ -47,19 +44,20 @@ const hours = [
         <div>
           <h3
             class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-charcoal mb-3 md:mb-4"
+            data-i18n="contact.addressTitle"
           >
             Dove Siamo
           </h3>
           <div class="text-sm md:text-base text-charcoal-light space-y-1">
-            <p>Largo Castello</p>
-            <p>66026 Ortona (CH)</p>
+            <p data-i18n="contact.address1">Largo Castello</p>
+            <p data-i18n="contact.address2">66026 Ortona (CH)</p>
           </div>
         </div>
         <a
           href="#"
           class="inline-flex items-center gap-2 text-xs md:text-sm text-amber hover:text-charcoal transition-colors group"
         >
-          <span>Apri in Maps</span>
+          <span data-i18n="contact.openMaps">Apri in Maps</span>
           <svg
             class="w-3 h-3 group-hover:translate-x-1 transition-transform"
             fill="none"
@@ -92,16 +90,26 @@ const hours = [
         <div>
           <h3
             class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-charcoal mb-3 md:mb-4"
+            data-i18n="contact.hoursTitle"
           >
             Orari
           </h3>
           <ul class="space-y-0.5 md:space-y-1">
             {
               hours.map((item) => (
-                <li class="text-sm md:text-base text-charcoal-light">
-                  <span class="text-charcoal">{item.day}</span>
+                <li
+                  class="text-sm md:text-base text-charcoal-light"
+                  data-hour-id={item.id}
+                >
+                  <span
+                    class="text-charcoal"
+                    data-i18n={`contact.hours.${item.id}.day`}
+                  />
                   <br class="md:hidden" />
-                  <span class="text-xs md:text-sm"> {item.time}</span>
+                  <span
+                    class="text-xs md:text-sm"
+                    data-i18n={`contact.hours.${item.id}.time`}
+                  />
                 </li>
               ))
             }
@@ -127,6 +135,7 @@ const hours = [
         <div>
           <h3
             class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-charcoal mb-3 md:mb-4"
+            data-i18n="contact.contactTitle"
           >
             Contattaci
           </h3>
@@ -245,3 +254,32 @@ const hours = [
     clip-path: url(#hand-drawn-clip);
   }
 </style>
+
+<script>
+  import { getStoredLanguage } from "../i18n/i18n";
+  import { translations } from "../i18n/translations";
+
+  function updateHours() {
+    const lang = getStoredLanguage();
+    const t = translations[lang];
+
+    document.querySelectorAll("[data-hour-id]").forEach((el) => {
+      const hourId = el.getAttribute(
+        "data-hour-id"
+      ) as keyof typeof t.contact.hours;
+      if (hourId && t.contact.hours[hourId]) {
+        const dayEl = el.querySelector('[data-i18n$=".day"]');
+        const timeEl = el.querySelector('[data-i18n$=".time"]');
+
+        if (dayEl) dayEl.textContent = t.contact.hours[hourId].day;
+        if (timeEl) timeEl.textContent = t.contact.hours[hourId].time;
+      }
+    });
+  }
+
+  updateHours();
+  document.addEventListener("DOMContentLoaded", updateHours);
+  window.addEventListener("storage", (e) => {
+    if (e.key === "panima-lang") updateHours();
+  });
+</script>

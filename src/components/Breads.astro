@@ -4,138 +4,146 @@ import SectionHeader from './ui/SectionHeader.astro';
 const breads = [
   {
     type: 'classic',
-    name: "Tipo Uno",
-    description: "Farina di grano tenero tipo 1, macinata a pietra. Crosta dorata e croccante, mollica soffice con alveolatura irregolare.",
+    id: 'tipoUno',
     image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
   },
   {
     type: 'classic',
-    name: "Integrale",
-    description: "Farina integrale di grano tenero con tutto il germe e la crusca. Ricco di fibre, dal sapore rustico e leggermente nocciolato.",
+    id: 'integrale',
     image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
   },
   {
     type: 'classic',
-    name: "Multicereale",
-    description: "Un blend di farro, avena, orzo e semi di lino. Crosta rustica con semi in superficie, ideale per chi cerca varietà e nutrimento.",
+    id: 'multicereale',
     image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
   },
   {
     type: 'special',
-    name: 'Riso Rosso',
-    description: "Farina di riso rosso integrale dell'Himalaya nell'impasto. Colore ambrato distintivo e un retrogusto delicato di nocciola.",
+    id: 'risoRosso',
     image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
   },
   {
     type: 'special',
-    name: 'Riso Nero',
-    description: "Riso nero Venere macinato fine aggiunto all'impasto. Mollica leggermente viola, aroma floreale e consistenza setosa.",
+    id: 'risoNero',
     image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
   },
   {
     type: 'classic',
-    name: 'Segale',
-    description: "Farina di segale scura al 40% per un pane denso e aromatico. Note terrose e leggermente acidule, si conserva a lungo.",
+    id: 'segale',
     image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
   },
   {
     type: 'classic',
-    name: 'Farro',
-    description: "Farro dicocco antico, coltivato in Umbria. Sapore dolce e burroso con una leggera nota di miele selvatico.",
+    id: 'farro',
     image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
   },
   {
     type: 'classic',
-    name: 'Saragolla',
-    description: "Grano duro Saragolla lucano, varietà antica e pregiata. Colore giallo ambrato, profumo intenso e grande digeribilità.",
+    id: 'saragolla',
     image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
   },
   {
     type: 'special',
-    name: "Cioccolato",
-    description: "Cacao amaro al 70% incorporato nell'impasto. Perfetto con formaggi erborinati o semplicemente con burro salato.",
+    id: 'cioccolato',
     image: "https://images.unsplash.com/photo-1534620808146-d33bb39128b2?w=600&q=80",
   },
   {
     type: 'special',
-    name: "Peperone & Pancetta",
-    description: "Cubetti di pancetta croccante e peperoni dolci arrostiti. Sapore deciso e avvolgente, ottimo tiepido.",
+    id: 'peperonePancetta',
     image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80",
   },
   {
     type: 'special',
-    name: "Noci & Fichi",
-    description: "Noci tostate e fichi secchi calabresi distribuiti nella mollica. Dolcezza naturale che si sposa con formaggi stagionati.",
+    id: 'nociFichi',
     image: "https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=600&q=80",
   },
   {
     type: 'special',
-    name: "Nevola",
-    description: "Grano tenero Nevola delle colline marchigiane, varietà rara e profumata. Mollica color avorio e aroma delicato di fieno.",
+    id: 'nevola',
     image: "https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=600&q=80",
   },
   {
     type: 'special',
-    name: "Uvetta & Miele",
-    description: "Uvetta sultanina ammollata nel rum e miele di acacia. Leggermente dolce, perfetto a colazione o come merenda.",
+    id: 'uvettaMiele',
     image: "https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=600&q=80",
   },
   {
     type: 'special',
-    name: "Olive",
-    description: "Olive taggiasche denocciolate a mano e impastata nella massa. Sapore mediterraneo intenso, ideale con salumi e formaggi.",
+    id: 'olive',
     image: "https://images.unsplash.com/photo-1574085733277-851d9d856a3a?w=600&q=80",
   },
   {
     type: 'special',
-    name: "Cacio & Ovo",
-    description: "Ispirato alla tradizione romana: pecorino romano grattugiato e tuorli d'uovo. Ricco e saporito, si scioglie in bocca.",
+    id: 'cacioOvo',
     image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80",
   },
   {
     type: 'special',
-    name: "Pomodori & Pecorino",
-    description: "Pomodori secchi sott'olio e scaglie di pecorino toscano. Un concentrato di Mediterraneo in ogni fetta.",
+    id: 'pomodoriPecorino',
     image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80",
   },
-];
-
-const filters = [
-  { id: 'all', label: 'Tutti' },
-  { id: 'classic', label: 'Classici' },
-  { id: 'special', label: 'Speciali' },
 ];
 ---
 
 <section id="pane" class="py-20 md:py-32 lg:py-40 bg-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8 mb-8 md:mb-12 reveal">
-      <SectionHeader tagline="Le Nostre Creazioni" title="Il Pane" />
-      <p class="text-charcoal-light max-w-sm text-sm leading-relaxed">
-        Ogni varieta nasce dallo stesso lievito madre, nutrito ogni giorno con dedizione.
+      <SectionHeader 
+        tagline="Le Nostre Creazioni" 
+        taglineI18n="breads.tagline"
+        title="Il Pane" 
+        titleI18n="breads.title"
+      />
+      <p class="text-charcoal-light max-w-sm text-sm leading-relaxed" data-i18n="breads.description">
+        Ogni varietà nasce dallo stesso lievito madre, nutrito ogni giorno con dedizione.
       </p>
     </div>
     
     <!-- Filter -->
     <nav class="mb-8 md:mb-12 reveal" aria-label="Filtra per tipo">
       <ul class="flex items-center gap-2 md:gap-3">
-        {filters.map((filter, index) => (
-          <li>
-            <button 
-              class="bread-filter relative px-4 py-2 text-xs tracking-[0.15em] uppercase transition-colors duration-300"
-              data-filter={filter.id}
-              aria-pressed={index === 0 ? "true" : "false"}
-            >
-              <span class="relative z-10">{filter.label}</span>
-              <!-- Panima circle shape -->
-              <img 
-                src="/panima-circle.svg" 
-                alt="" 
-                class="filter-shape absolute inset-0 w-full h-full object-fill pointer-events-none text-gold"
-              />
-            </button>
-          </li>
-        ))}
+        <li>
+          <button 
+            class="bread-filter relative px-4 py-2 text-xs tracking-[0.15em] uppercase transition-colors duration-300"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            <span class="relative z-10" data-i18n="breads.filterAll">Tutti</span>
+            <img 
+              src="/panima-circle.svg" 
+              alt="" 
+              class="filter-shape absolute inset-0 w-full h-full object-fill pointer-events-none text-gold"
+            />
+          </button>
+        </li>
+        <li>
+          <button 
+            class="bread-filter relative px-4 py-2 text-xs tracking-[0.15em] uppercase transition-colors duration-300"
+            data-filter="classic"
+            aria-pressed="false"
+          >
+            <span class="relative z-10" data-i18n="breads.filterClassic">Classici</span>
+            <img 
+              src="/panima-circle.svg" 
+              alt="" 
+              class="filter-shape absolute inset-0 w-full h-full object-fill pointer-events-none text-gold"
+            />
+          </button>
+        </li>
+        <li>
+          <button 
+            class="bread-filter relative px-4 py-2 text-xs tracking-[0.15em] uppercase transition-colors duration-300"
+            data-filter="special"
+            aria-pressed="false"
+          >
+            <span class="relative z-10" data-i18n="breads.filterSpecial">Speciali</span>
+            <img 
+              src="/panima-circle.svg" 
+              alt="" 
+              class="filter-shape absolute inset-0 w-full h-full object-fill pointer-events-none text-gold"
+            />
+          </button>
+        </li>
       </ul>
     </nav>
   </div>
@@ -146,12 +154,13 @@ const filters = [
       <article 
         class="bread-card group relative w-[75vw] md:w-[320px] lg:w-[360px] shrink-0 mr-5 md:mr-8"
         data-type={bread.type}
+        data-bread-id={bread.id}
       >
         <!-- Image with overlay -->
         <div class="relative aspect-4/3 md:aspect-square lg:aspect-3/4 overflow-hidden bg-sand">
           <img 
             src={bread.image}
-            alt={bread.name}
+            alt=""
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
             loading="lazy"
           />
@@ -162,11 +171,15 @@ const filters = [
           <div class="absolute bottom-0 left-0 right-0 p-5 md:p-6">
             <!-- Gold accent line -->
             <div class="w-8 h-px bg-gold/60 mb-4 group-hover:w-12 transition-all duration-500"></div>
-            <h3 class="font-display text-3xl md:text-4xl text-cream mb-2">
-              {bread.name}
+            <h3 
+              class="font-display text-3xl md:text-4xl text-cream mb-2"
+              data-i18n={`breads.items.${bread.id}.name`}
+            >
             </h3>
-            <p class="text-sm text-cream/80 leading-relaxed">
-              {bread.description}
+            <p 
+              class="text-sm text-cream/80 leading-relaxed"
+              data-i18n={`breads.items.${bread.id}.description`}
+            >
             </p>
           </div>
         </div>
@@ -179,7 +192,7 @@ const filters = [
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
       </svg>
-      <span class="text-xs tracking-wider uppercase">Scorri per vedere tutti</span>
+      <span class="text-xs tracking-wider uppercase" data-i18n="breads.scrollHint">Scorri per vedere tutti</span>
     </div>
   </div>
 </section>
@@ -217,9 +230,42 @@ const filters = [
 </style>
 
 <script>
+  import { getStoredLanguage } from '../i18n/i18n';
+import { translations } from '../i18n/translations';
+  
   const filterButtons = document.querySelectorAll('.bread-filter');
   const breadCards = document.querySelectorAll('.bread-card');
   const gallery = document.getElementById('breads-gallery');
+  
+  // Initialize bread card content with translations
+  function updateBreadCards() {
+    const lang = getStoredLanguage();
+    const t = translations[lang];
+    
+    breadCards.forEach(card => {
+      const breadId = card.getAttribute('data-bread-id') as keyof typeof t.breads.items;
+      if (breadId && t.breads.items[breadId]) {
+        const nameEl = card.querySelector('[data-i18n$=".name"]');
+        const descEl = card.querySelector('[data-i18n$=".description"]');
+        
+        if (nameEl) nameEl.textContent = t.breads.items[breadId].name;
+        if (descEl) descEl.textContent = t.breads.items[breadId].description;
+      }
+    });
+  }
+  
+  // Run on load
+  updateBreadCards();
+  
+  // Listen for language changes
+  document.addEventListener('DOMContentLoaded', updateBreadCards);
+  
+  // Observe localStorage changes for language
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'panima-lang') {
+      updateBreadCards();
+    }
+  });
   
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
