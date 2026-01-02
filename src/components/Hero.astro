@@ -2,13 +2,7 @@
 import ArrowLink from './ui/ArrowLink.astro';
 ---
 
-<section class="relative min-h-screen flex items-center justify-center bg-cream texture-overlay overflow-hidden">
-  <!-- Subtle animated background gradients -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <div class="absolute top-1/4 -left-1/4 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-sand/50 rounded-full blur-[100px] animate-float"></div>
-    <div class="absolute bottom-1/4 -right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gold/20 rounded-full blur-[100px] animate-float-delayed"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-sky/15 rounded-full blur-[120px] animate-float"></div>
-  </div>
+<section class="relative min-h-screen flex items-center justify-center bg-cream overflow-hidden">
   
   <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
     <div class="space-y-6">
@@ -54,25 +48,6 @@ import ArrowLink from './ui/ArrowLink.astro';
 </section>
 
 <style>
-  @keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(30px, -30px) scale(1.05); }
-  }
-  
-  @keyframes float-delayed {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-20px, 20px) scale(1.03); }
-  }
-  
-  .animate-float {
-    animation: float 20s ease-in-out infinite;
-  }
-  
-  .animate-float-delayed {
-    animation: float-delayed 25s ease-in-out infinite;
-    animation-delay: -5s;
-  }
-  
   .hero-reveal {
     opacity: 0;
     transform: translateY(30px);
