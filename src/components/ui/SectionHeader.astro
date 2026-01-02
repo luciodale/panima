@@ -11,11 +11,10 @@ const alignClass = align === 'center' ? 'text-center' : '';
 ---
 
 <div class:list={['space-y-3 md:space-y-4', alignClass, className]}>
-  <p class="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase text-earth-dark font-medium">
+  <p class="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase text-amber font-medium">
     {tagline}
   </p>
   <h2 class="font-display text-4xl md:text-5xl lg:text-7xl text-charcoal leading-[0.95]">
     <Fragment set:html={title} />
   </h2>
 </div>
-

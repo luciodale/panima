@@ -9,15 +9,12 @@ const navLinks = [
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-700" id="header">
   <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6 flex items-center justify-between relative z-50">
-    <a href="/" class="group flex items-center gap-2 md:gap-3">
+    <a href="/" class="group">
       <img 
-        src="/panima-illustration.svg" 
-        alt="Pànima logo" 
-        class="w-8 h-10 md:w-10 md:h-12 group-hover:opacity-80 transition-opacity duration-300"
+        src="/panima.svg" 
+        alt="Pànima" 
+        class="h-10 md:h-12 w-auto group-hover:opacity-80 transition-opacity duration-300"
       />
-      <span class="font-display text-xl md:text-2xl tracking-wide text-charcoal group-hover:text-earth-dark transition-colors duration-300">
-        Pànima
-      </span>
     </a>
     
     <nav class="hidden md:block">
@@ -29,7 +26,7 @@ const navLinks = [
               class="relative text-xs tracking-[0.2em] uppercase text-charcoal-light hover:text-charcoal transition-colors duration-300 py-2"
             >
               <span>{link.label}</span>
-              <span class="absolute bottom-0 left-0 w-0 h-px bg-earth transition-all duration-500 hover:w-full"></span>
+              <span class="absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-500 hover:w-full"></span>
             </a>
           </li>
         ))}
@@ -37,7 +34,7 @@ const navLinks = [
     </nav>
     
     <button 
-      class="md:hidden p-2 -mr-2 text-charcoal hover:text-earth-dark transition-colors relative z-50"
+      class="md:hidden p-2 -mr-2 text-charcoal hover:text-amber transition-colors relative z-50"
       id="mobile-menu-toggle"
       aria-label="Toggle menu"
     >
@@ -60,7 +57,7 @@ const navLinks = [
           <li class="mobile-menu-item" style={`--index: ${index}`}>
             <a 
               href={link.href}
-              class="block text-3xl font-display text-charcoal hover:text-earth-dark transition-colors"
+              class="block text-3xl font-display text-charcoal hover:text-amber transition-colors"
             >
               {link.label}
             </a>
@@ -73,7 +70,7 @@ const navLinks = [
   <!-- Mobile menu footer -->
   <div class="p-6 text-center border-t border-sand">
     <p class="text-sm text-charcoal-light">ciao@panima.it</p>
-    <p class="text-xs text-clay mt-1">Roma, Italia</p>
+    <p class="text-xs text-amber mt-1">Roma, Italia</p>
   </div>
 </div>
 

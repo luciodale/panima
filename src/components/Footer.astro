@@ -2,24 +2,23 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="py-12 md:py-20 bg-charcoal text-cream">
+<footer class="py-12 md:py-20 bg-forest-dark text-cream">
   <div class="max-w-7xl mx-auto px-6">
     <!-- Top section -->
     <div class="flex flex-col items-center text-center mb-10 md:mb-16">
-      <!-- Logo mark -->
+      <!-- Logo (includes illustration and name) -->
       <img 
-        src="/panima-illustration.svg" 
-        alt="Pànima logo" 
-        class="w-12 h-16 md:w-16 md:h-20 mb-4 md:mb-6"
+        src="/panima.svg" 
+        alt="Panima" 
+        class="w-24 md:w-28 mb-4 md:mb-6"
       />
       
-      <h2 class="font-display text-3xl md:text-5xl mb-2 md:mb-3">Pànima</h2>
-      <p class="text-dust text-xs md:text-sm tracking-widest uppercase">Micro Forno Artigianale</p>
+      <p class="text-sand/70 text-xs md:text-sm tracking-widest uppercase">Micro Forno Artigianale</p>
     </div>
     
     <!-- Divider -->
     <div class="flex justify-center mb-10 md:mb-16">
-      <div class="w-16 md:w-24 h-px bg-linear-to-r from-transparent via-clay/40 to-transparent"></div>
+      <div class="w-16 md:w-24 h-px bg-linear-to-r from-transparent via-forest/40 to-transparent"></div>
     </div>
     
     <!-- Bottom section -->
@@ -28,7 +27,7 @@ const currentYear = new Date().getFullYear();
       <div class="flex items-center gap-6 md:gap-8 order-2 md:order-1">
         <a 
           href="#" 
-          class="text-dust hover:text-cream transition-colors"
+          class="text-sand/60 hover:text-cream transition-colors"
           aria-label="Instagram"
         >
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -37,7 +36,7 @@ const currentYear = new Date().getFullYear();
         </a>
         <a 
           href="#" 
-          class="text-dust hover:text-cream transition-colors"
+          class="text-sand/60 hover:text-cream transition-colors"
           aria-label="Facebook"
         >
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -47,14 +46,14 @@ const currentYear = new Date().getFullYear();
       </div>
       
       <!-- Copyright -->
-      <p class="text-xs md:text-sm text-dust/60 order-3 md:order-2">
+      <p class="text-xs md:text-sm text-sand/40 order-3 md:order-2">
         © {currentYear} Pànima
       </p>
       
       <!-- Back to top -->
       <button 
         id="back-to-top"
-        class="group flex items-center gap-2 text-dust hover:text-cream transition-colors order-1 md:order-3 cursor-pointer"
+        class="group flex items-center gap-2 text-sand/60 hover:text-cream transition-colors order-1 md:order-3 cursor-pointer"
       >
         <span class="text-xs tracking-wider uppercase">Torna su</span>
         <svg class="w-4 h-4 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
