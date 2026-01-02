@@ -1,17 +1,18 @@
 ---
-import ArrowLink from './ui/ArrowLink.astro';
+import ArrowLink from "./ui/ArrowLink.astro";
 ---
 
-<section class="relative min-h-screen flex items-center justify-center bg-cream overflow-hidden">
-  
+<section
+  class="relative min-h-screen flex items-center justify-center bg-cream overflow-hidden"
+>
   <!-- Hand-drawn line that draws from left to right -->
-  <svg 
+  <svg
     class="hand-drawn-line absolute bottom-6 md:bottom-10 left-0 w-full h-16 md:h-20 pointer-events-none"
-    viewBox="0 0 1200 80" 
+    viewBox="0 0 1200 80"
     preserveAspectRatio="none"
     fill="none"
   >
-    <path 
+    <path
       class="drawn-path"
       d="M-10 45 
          Q50 42 100 48 
@@ -24,51 +25,63 @@ import ArrowLink from './ui/ArrowLink.astro';
          Q860 58 920 52 
          Q980 45 1040 48 
          Q1100 52 1160 45
-         Q1200 40 1210 42" 
-      stroke="#d4a55d" 
-      stroke-width="1.5" 
+         Q1200 40 1210 42"
+      stroke="#d4a55d"
+      stroke-width="1.5"
       stroke-linecap="round"
-      stroke-linejoin="round"
-    />
+      stroke-linejoin="round"></path>
   </svg>
-  
+
   <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
     <div class="space-y-6">
       <!-- Logo (includes illustration and name) -->
       <div class="flex justify-center hero-reveal" style="--delay: 0ms;">
-        <img 
-          src="/panima.svg" 
-          alt="Panima" 
-          class="h-32 md:h-48 w-auto"
-        />
+        <img src="/panima.svg" alt="Panima" class="h-32 md:h-48 w-auto" />
       </div>
-      
+
       <!-- Small tagline with line -->
-      <div class="flex items-center justify-center gap-4 hero-reveal" style="--delay: 150ms;">
+      <div
+        class="flex items-center justify-center gap-4 hero-reveal"
+        style="--delay: 150ms;"
+      >
         <div class="w-8 md:w-12 h-px bg-gold/50"></div>
-        <p class="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase text-amber font-medium">
+        <p
+          class="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase text-amber font-medium"
+        >
           Micro Forno Artigianale
         </p>
         <div class="w-8 md:w-12 h-px bg-gold/50"></div>
       </div>
-      
+
       <!-- Subtitle -->
-      <p class="font-display text-xl md:text-4xl text-charcoal-light italic hero-reveal" style="--delay: 300ms;">
+      <p
+        class="font-display text-xl md:text-4xl text-charcoal-light italic hero-reveal"
+        style="--delay: 300ms;"
+      >
         L'arte del lievito madre
       </p>
-      
+
       <!-- Divider -->
       <div class="flex justify-center hero-reveal" style="--delay: 400ms;">
-        <div class="w-16 h-px bg-linear-to-r from-transparent via-gold to-transparent"></div>
+        <div
+          class="w-16 h-px bg-linear-to-r from-transparent via-gold to-transparent"
+        >
+        </div>
       </div>
-      
+
       <!-- Description -->
-      <p class="text-sm md:text-lg text-charcoal-light/80 max-w-md mx-auto hero-reveal" style="--delay: 500ms;">
+      <p
+        class="text-sm md:text-lg text-charcoal-light/80 max-w-md mx-auto hero-reveal"
+        style="--delay: 500ms;"
+      >
         Pane fatto a mano, gusti unici, momenti autentici.
       </p>
-      
+
       <!-- CTA -->
-      <div class="pt-6 md:pt-8 hero-reveal flex justify-center" style="--delay: 600ms;">
+      <div
+        class="pt-6 md:pt-8 hero-reveal flex justify-center"
+        style="--delay: 600ms;"
+      >
         <ArrowLink href="#pane" label="Scopri il pane" />
       </div>
     </div>
@@ -82,21 +95,21 @@ import ArrowLink from './ui/ArrowLink.astro';
     animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: var(--delay, 0ms);
   }
-  
+
   @keyframes heroReveal {
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  
+
   /* Hand-drawn line animation */
   .drawn-path {
     stroke-dasharray: 1500;
     stroke-dashoffset: 1500;
     animation: drawLine 2.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
   }
-  
+
   @keyframes drawLine {
     to {
       stroke-dashoffset: 0;

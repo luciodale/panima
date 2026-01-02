@@ -3,52 +3,150 @@ import SectionHeader from './ui/SectionHeader.astro';
 
 const breads = [
   {
-    name: "Classico",
-    description: "Crosta croccante, mollica alveolata. Semplicita perfetta.",
+    type: 'classic',
+    name: "Tipo Uno",
+    description: "Farina di grano tenero tipo 1, macinata a pietra. Crosta dorata e croccante, mollica soffice con alveolatura irregolare.",
     image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
   },
   {
+    type: 'classic',
+    name: "Integrale",
+    description: "Farina integrale di grano tenero con tutto il germe e la crusca. Ricco di fibre, dal sapore rustico e leggermente nocciolato.",
+    image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
+  },
+  {
+    type: 'classic',
+    name: "Multicereale",
+    description: "Un blend di farro, avena, orzo e semi di lino. Crosta rustica con semi in superficie, ideale per chi cerca varietà e nutrimento.",
+    image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
+  },
+  {
+    type: 'special',
+    name: 'Riso Rosso',
+    description: "Farina di riso rosso integrale dell'Himalaya nell'impasto. Colore ambrato distintivo e un retrogusto delicato di nocciola.",
+    image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
+  },
+  {
+    type: 'special',
+    name: 'Riso Nero',
+    description: "Riso nero Venere macinato fine aggiunto all'impasto. Mollica leggermente viola, aroma floreale e consistenza setosa.",
+    image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
+  },
+  {
+    type: 'classic',
+    name: 'Segale',
+    description: "Farina di segale scura al 40% per un pane denso e aromatico. Note terrose e leggermente acidule, si conserva a lungo.",
+    image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
+  },
+  {
+    type: 'classic',
+    name: 'Farro',
+    description: "Farro dicocco antico, coltivato in Umbria. Sapore dolce e burroso con una leggera nota di miele selvatico.",
+    image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
+  },
+  {
+    type: 'classic',
+    name: 'Saragolla',
+    description: "Grano duro Saragolla lucano, varietà antica e pregiata. Colore giallo ambrato, profumo intenso e grande digeribilità.",
+    image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
+  },
+  {
+    type: 'special',
     name: "Cioccolato",
-    description: "Note intense di cacao 70%. Ideale con formaggi stagionati.",
+    description: "Cacao amaro al 70% incorporato nell'impasto. Perfetto con formaggi erborinati o semplicemente con burro salato.",
     image: "https://images.unsplash.com/photo-1534620808146-d33bb39128b2?w=600&q=80",
   },
   {
-    name: "Peperoncino",
-    description: "Fuoco mediterraneo. Carattere deciso, persistenza delicata.",
+    type: 'special',
+    name: "Peperone & Pancetta",
+    description: "Cubetti di pancetta croccante e peperoni dolci arrostiti. Sapore deciso e avvolgente, ottimo tiepido.",
     image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80",
   },
   {
-    name: "Bacon",
-    description: "Sapore avvolgente e affumicatura naturale.",
+    type: 'special',
+    name: "Noci & Fichi",
+    description: "Noci tostate e fichi secchi calabresi distribuiti nella mollica. Dolcezza naturale che si sposa con formaggi stagionati.",
     image: "https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=600&q=80",
   },
   {
+    type: 'special',
+    name: "Nevola",
+    description: "Grano tenero Nevola delle colline marchigiane, varietà rara e profumata. Mollica color avorio e aroma delicato di fieno.",
+    image: "https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=600&q=80",
+  },
+  {
+    type: 'special',
+    name: "Uvetta & Miele",
+    description: "Uvetta sultanina ammollata nel rum e miele di acacia. Leggermente dolce, perfetto a colazione o come merenda.",
+    image: "https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=600&q=80",
+  },
+  {
+    type: 'special',
     name: "Olive",
-    description: "Taggiasche nel nostro impasto. Mediterraneo in ogni morso.",
+    description: "Olive taggiasche denocciolate a mano e impastata nella massa. Sapore mediterraneo intenso, ideale con salumi e formaggi.",
     image: "https://images.unsplash.com/photo-1574085733277-851d9d856a3a?w=600&q=80",
   },
   {
-    name: "Noci e Miele",
-    description: "Dolcezza naturale e croccantezza. Perfetto a colazione.",
+    type: 'special',
+    name: "Cacio & Ovo",
+    description: "Ispirato alla tradizione romana: pecorino romano grattugiato e tuorli d'uovo. Ricco e saporito, si scioglie in bocca.",
     image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80",
   },
+  {
+    type: 'special',
+    name: "Pomodori & Pecorino",
+    description: "Pomodori secchi sott'olio e scaglie di pecorino toscano. Un concentrato di Mediterraneo in ogni fetta.",
+    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80",
+  },
+];
+
+const filters = [
+  { id: 'all', label: 'Tutti' },
+  { id: 'classic', label: 'Classici' },
+  { id: 'special', label: 'Speciali' },
 ];
 ---
 
 <section id="pane" class="py-20 md:py-32 lg:py-40 bg-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8 mb-10 md:mb-16 reveal">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8 mb-8 md:mb-12 reveal">
       <SectionHeader tagline="Le Nostre Creazioni" title="Il Pane" />
       <p class="text-charcoal-light max-w-sm text-sm leading-relaxed">
-        Ogni varieta nasce dallo stesso lievito madre, nutrito con passione.
+        Ogni varieta nasce dallo stesso lievito madre, nutrito ogni giorno con dedizione.
       </p>
     </div>
+    
+    <!-- Filter -->
+    <nav class="mb-8 md:mb-12 reveal" aria-label="Filtra per tipo">
+      <ul class="flex items-center gap-2 md:gap-3">
+        {filters.map((filter, index) => (
+          <li>
+            <button 
+              class="bread-filter relative px-4 py-2 text-xs tracking-[0.15em] uppercase transition-colors duration-300"
+              data-filter={filter.id}
+              aria-pressed={index === 0 ? "true" : "false"}
+            >
+              <span class="relative z-10">{filter.label}</span>
+              <!-- Panima circle shape -->
+              <img 
+                src="/panima-circle.svg" 
+                alt="" 
+                class="filter-shape absolute inset-0 w-full h-full object-fill pointer-events-none text-gold"
+              />
+            </button>
+          </li>
+        ))}
+      </ul>
+    </nav>
   </div>
   
-  <!-- Horizontal scroll container -->
-  <div class="horizontal-scroll gap-5 md:gap-8 px-6 pb-6 md:pb-8 reveal">
+  <!-- Horizontal scroll container - no gap, using margin instead -->
+  <div id="breads-gallery" class="horizontal-scroll px-6 pb-6 md:pb-8 reveal">
     {breads.map((bread) => (
-      <article class="group relative w-[75vw] md:w-[320px] lg:w-[360px] shrink-0">
+      <article 
+        class="bread-card group relative w-[75vw] md:w-[320px] lg:w-[360px] shrink-0 mr-5 md:mr-8"
+        data-type={bread.type}
+      >
         <!-- Image with overlay -->
         <div class="relative aspect-4/3 md:aspect-square lg:aspect-3/4 overflow-hidden bg-sand">
           <img 
@@ -85,3 +183,68 @@ const breads = [
     </div>
   </div>
 </section>
+
+<style>
+  .bread-filter {
+    color: var(--color-charcoal-light);
+  }
+  
+  .bread-filter .filter-shape {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .bread-filter[aria-pressed="true"] {
+    color: var(--color-charcoal);
+  }
+  
+  .bread-filter[aria-pressed="true"] .filter-shape {
+    opacity: 1;
+  }
+  
+  .bread-filter:hover:not([aria-pressed="true"]) {
+    color: var(--color-charcoal);
+  }
+  
+  .bread-filter:hover:not([aria-pressed="true"]) .filter-shape {
+    opacity: 0.4;
+  }
+  
+  /* Hidden cards - completely removed from layout */
+  .bread-card.is-hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  const filterButtons = document.querySelectorAll('.bread-filter');
+  const breadCards = document.querySelectorAll('.bread-card');
+  const gallery = document.getElementById('breads-gallery');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+      
+      // Update active state
+      filterButtons.forEach(btn => btn.setAttribute('aria-pressed', 'false'));
+      button.setAttribute('aria-pressed', 'true');
+      
+      // Filter cards
+      breadCards.forEach(card => {
+        const cardType = card.getAttribute('data-type');
+        const shouldShow = filter === 'all' || cardType === filter;
+        
+        if (shouldShow) {
+          card.classList.remove('is-hidden');
+        } else {
+          card.classList.add('is-hidden');
+        }
+      });
+      
+      // Reset scroll position
+      if (gallery) {
+        gallery.scrollTo({ left: 0, behavior: 'smooth' });
+      }
+    });
+  });
+</script>

@@ -1,19 +1,24 @@
 ---
-import SectionHeader from './ui/SectionHeader.astro';
+import SectionHeader from "./ui/SectionHeader.astro";
 ---
 
-<section class="py-20 md:py-32 lg:py-40 bg-sky-light overflow-hidden">
+<section
+  id="laboratorio"
+  class="py-20 md:py-32 lg:py-40 bg-sky-light overflow-hidden"
+>
   <div class="max-w-7xl mx-auto px-6">
     <div class="mb-10 md:mb-16 reveal">
       <SectionHeader tagline="Dove Nasce il Pane" title="Il Laboratorio" />
     </div>
-    
+
     <!-- Media grid -->
     <div class="flex flex-col md:flex-row gap-5 md:gap-8">
       <!-- Main image - wider -->
       <div class="md:w-7/12 reveal">
-        <div class="h-64 md:h-112 lg:h-128 xl:h-144 overflow-hidden bg-sand-light">
-          <img 
+        <div
+          class="h-64 md:h-112 lg:h-128 xl:h-144 overflow-hidden bg-sand-light"
+        >
+          <img
             src="https://images.unsplash.com/photo-1549488344-cab7d6164423?w=1200&q=80"
             alt="Il nostro forno"
             class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
@@ -23,25 +28,31 @@ import SectionHeader from './ui/SectionHeader.astro';
       </div>
       <!-- Video - portrait, narrower -->
       <div class="md:w-5/12 reveal">
-        <div class="h-64 md:h-112 lg:h-128 xl:h-144 overflow-hidden bg-sand-light">
-          <video 
+        <div
+          class="h-64 md:h-112 lg:h-128 xl:h-144 overflow-hidden bg-sand-light"
+        >
+          <video
             src="/videos/sourdough.mov"
             autoplay
             loop
             muted
             playsinline
-            class="w-full h-full object-cover"
-          ></video>
+            class="w-full h-full object-cover"></video>
         </div>
       </div>
     </div>
-    
+
     <!-- Caption -->
-    <div class="mt-8 md:mt-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4 reveal">
+    <div
+      class="mt-8 md:mt-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4 reveal"
+    >
       <p class="text-charcoal-light text-sm md:text-base max-w-md">
         Un piccolo spazio dove tradizione e passione si incontrano ogni giorno.
+        Qui il pane prende forna, lievita lentamente e diventa esperienza.
       </p>
-      <span class="text-gold text-xs tracking-[0.3em] uppercase">Roma, Italia</span>
+      <span class="text-gold text-xs tracking-[0.3em] uppercase"
+        >Ortona, Italia</span
+      >
     </div>
   </div>
 </section>

@@ -1,6 +1,7 @@
 ---
-import Divider from './ui/Divider.astro';
-import SectionHeader from './ui/SectionHeader.astro';
+import ArrowLink from "./ui/ArrowLink.astro";
+import Divider from "./ui/Divider.astro";
+import SectionHeader from "./ui/SectionHeader.astro";
 
 const products = [
   { name: "Formaggi stagionati", origin: "Produttori locali" },
@@ -12,77 +13,101 @@ const products = [
 ];
 ---
 
-<section id="aperitivo" class="pt-20 pb-0 md:py-32 lg:py-40 bg-cream overflow-hidden">
+<section
+  id="aperitivo"
+  class="pt-20 pb-0 md:py-32 lg:py-40 bg-cream overflow-hidden"
+>
   <div class="max-w-7xl mx-auto md:px-6">
     <div class="flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-20">
       <!-- Content -->
       <div class="lg:col-span-6 px-6 md:px-0">
         <div class="space-y-8 md:space-y-10 reveal-stagger">
           <SectionHeader tagline="Un Momento Speciale" title="L'Aperitivo" />
-          
+
           <Divider />
-          
-          <p class="text-charcoal-light text-sm md:text-base lg:text-lg leading-relaxed max-w-md">
-            Pochi tavoli, un'esperienza autentica. L'aperitivo da Panima è una celebrazione dei sapori semplici e genuini.
+
+          <p
+            class="text-charcoal-light text-sm md:text-base lg:text-lg leading-relaxed max-w-md"
+          >
+            Pochi tavoli, atmosfera raccolta, sapori autentici. L'aperitivo da
+            Panima è un invito a fermarsi, assaggiare e condividere.
           </p>
-          
+
           <!-- Products grid -->
           <div class="pt-2 md:pt-4">
-            <h3 class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-charcoal mb-4 md:mb-6">
-              Accompagnamenti
+            <h3
+              class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-charcoal mb-4 md:mb-6"
+            >
+              Accompagnamenti Selezionati
             </h3>
             <div class="grid grid-cols-2 gap-x-6 md:gap-x-8 gap-y-3 md:gap-y-4">
-              {products.map((product) => (
-                <div class="group">
-                  <p class="text-sm md:text-base text-charcoal font-medium group-hover:text-amber transition-colors">
-                    {product.name}
-                  </p>
-                  <p class="text-[10px] md:text-xs text-charcoal-light mt-0.5">{product.origin}</p>
-                </div>
-              ))}
+              {
+                products.map((product) => (
+                  <div class="group">
+                    <p class="text-sm md:text-base text-charcoal font-medium group-hover:text-amber transition-colors">
+                      {product.name}
+                    </p>
+                    <p class="text-[10px] md:text-xs text-charcoal-light mt-0.5">
+                      {product.origin}
+                    </p>
+                  </div>
+                ))
+              }
             </div>
           </div>
-          
+
           <!-- Seating callout -->
           <div class="pt-6 md:pt-8 border-t border-sky/30">
             <div class="flex items-start gap-3 md:gap-4">
-              <span class="font-display text-4xl md:text-5xl text-sky leading-none">12</span>
+              <span
+                class="font-display text-4xl md:text-5xl text-sky leading-none"
+                >12</span
+              >
               <div>
-                <p class="text-sm md:text-base text-charcoal font-medium">posti a sedere</p>
+                <p class="text-sm md:text-base text-charcoal font-medium">
+                  posti a sedere
+                </p>
                 <p class="text-xs md:text-sm text-charcoal-light mt-1">
-                  Prenota per l'esperienza completa
+                  Un'esperienza intima, da vivere con calma.
                 </p>
               </div>
             </div>
           </div>
+          <ArrowLink href="#pane" label="Prenota l'aperitivo" />
         </div>
       </div>
-      
+
       <!-- Image - full bleed on mobile -->
       <div class="lg:col-span-6 reveal">
         <div class="relative">
-          <div class="aspect-4/3 md:aspect-square lg:aspect-4/5 overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" 
+          <div
+            class="aspect-4/3 md:aspect-square lg:aspect-4/5 overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
               alt="L'ambiente dell'aperitivo"
               class="w-full h-full object-cover"
               loading="lazy"
             />
           </div>
           <!-- Hand-drawn accent with scalloped edges -->
-          <svg class="hidden md:block absolute -top-6 -left-6 w-full h-full -z-10" viewBox="0 0 200 200" preserveAspectRatio="none" fill="none">
-            <path 
+          <svg
+            class="hidden md:block absolute -top-6 -left-6 w-full h-full -z-10"
+            viewBox="0 0 200 200"
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <path
               d="M4 4 
                  Q20 0 30 4 Q45 8 55 4 Q70 0 80 4 Q95 8 105 4 Q120 0 130 4 Q145 8 155 4 Q170 0 180 4 Q195 8 196 10
                  Q200 25 196 35 Q192 50 196 60 Q200 75 196 85 Q192 100 196 110 Q200 125 196 135 Q192 150 196 160 Q200 175 196 185 Q192 195 190 196
                  Q175 200 165 196 Q150 192 140 196 Q125 200 115 196 Q100 192 90 196 Q75 200 65 196 Q50 192 40 196 Q25 200 15 196 Q5 192 4 190
                  Q0 175 4 165 Q8 150 4 140 Q0 125 4 115 Q8 100 4 90 Q0 75 4 65 Q8 50 4 40 Q0 25 4 15 Q8 5 4 4"
-              stroke="#9ac9db" 
-              stroke-width="1.2" 
+              stroke="#9ac9db"
+              stroke-width="1.2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="opacity-60"
-            />
+              class="opacity-60"></path>
           </svg>
         </div>
       </div>

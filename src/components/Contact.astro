@@ -1,5 +1,5 @@
 ---
-import SectionHeader from './ui/SectionHeader.astro';
+import SectionHeader from "./ui/SectionHeader.astro";
 
 const hours = [
   { day: "Mar - Ven:", time: "7:30 – 14:00 · 17:00 – 20:00" },
@@ -13,76 +13,141 @@ const hours = [
   <div class="max-w-7xl mx-auto px-6">
     <!-- Header -->
     <div class="mb-12 md:mb-20 reveal">
-      <SectionHeader tagline="Vieni a Trovarci" title="Contatti" align="center" />
+      <SectionHeader
+        tagline="Vieni a Trovarci"
+        title="Contatti"
+        align="center"
+      />
     </div>
-    
+
     <!-- Content -->
-    <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left justify-center gap-10 md:gap-16 lg:gap-24 reveal-stagger">
+    <div
+      class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left justify-center gap-10 md:gap-16 lg:gap-24 reveal-stagger"
+    >
       <!-- Address -->
       <div class="space-y-4 md:space-y-6">
-        <svg class="w-6 h-6 text-gold mx-auto md:mx-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        <svg
+          class="w-6 h-6 text-gold mx-auto md:mx-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+          ></path>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
         </svg>
         <div>
-          <h3 class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-charcoal mb-3 md:mb-4">Dove Siamo</h3>
+          <h3
+            class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-charcoal mb-3 md:mb-4"
+          >
+            Dove Siamo
+          </h3>
           <div class="text-sm md:text-base text-charcoal-light space-y-1">
-            <p>Via del Forno, 23</p>
-            <p>00100 Roma (RM)</p>
+            <p>Largo Castello</p>
+            <p>66026 Ortona (CH)</p>
           </div>
         </div>
-        <a 
-          href="#" 
+        <a
+          href="#"
           class="inline-flex items-center gap-2 text-xs md:text-sm text-amber hover:text-charcoal transition-colors group"
         >
           <span>Apri in Maps</span>
-          <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          <svg
+            class="w-3 h-3 group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
         </a>
       </div>
-      
+
       <!-- Hours -->
       <div class="space-y-4 md:space-y-6">
-        <svg class="w-6 h-6 text-gold mx-auto md:mx-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <svg
+          class="w-6 h-6 text-gold mx-auto md:mx-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
         <div>
-          <h3 class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-charcoal mb-3 md:mb-4">Orari</h3>
+          <h3
+            class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-charcoal mb-3 md:mb-4"
+          >
+            Orari
+          </h3>
           <ul class="space-y-0.5 md:space-y-1">
-            {hours.map((item) => (
-              <li class="text-sm md:text-base text-charcoal-light">
-                <span class="text-charcoal">{item.day}</span>
-                <br class="md:hidden" />
-                <span class="text-xs md:text-sm"> {item.time}</span>
-              </li>
-            ))}
+            {
+              hours.map((item) => (
+                <li class="text-sm md:text-base text-charcoal-light">
+                  <span class="text-charcoal">{item.day}</span>
+                  <br class="md:hidden" />
+                  <span class="text-xs md:text-sm"> {item.time}</span>
+                </li>
+              ))
+            }
           </ul>
         </div>
       </div>
-      
+
       <!-- Contact -->
       <div class="space-y-4 md:space-y-6">
-        <svg class="w-6 h-6 text-gold mx-auto md:mx-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        <svg
+          class="w-6 h-6 text-gold mx-auto md:mx-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          ></path>
         </svg>
         <div>
-          <h3 class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-charcoal mb-3 md:mb-4">Contattaci</h3>
+          <h3
+            class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-charcoal mb-3 md:mb-4"
+          >
+            Contattaci
+          </h3>
           <div class="space-y-2 md:space-y-3 text-sm md:text-base">
-            <a href="tel:+39061234567" class="block text-charcoal-light hover:text-amber transition-colors">
-              +39 06 123 4567
-            </a>
-            <a href="mailto:ciao@panima.it" class="block text-charcoal-light hover:text-amber transition-colors">
+            <a
+              href="mailto:ciao@panima.it"
+              class="block text-charcoal-light hover:text-amber transition-colors"
+            >
               ciao@panima.it
             </a>
-            <a href="#" class="block text-charcoal-light hover:text-amber transition-colors">
-              @panima.forno
+            <a
+              href="#"
+              class="block text-charcoal-light hover:text-amber transition-colors"
+            >
+              @panima_forno
             </a>
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- Map with hand-drawn frame -->
     <div class="mt-12 md:mt-20 reveal">
       <div class="w-full sm:max-w-md mx-auto relative">
@@ -90,7 +155,8 @@ const hours = [
         <svg class="absolute w-0 h-0">
           <defs>
             <clipPath id="hand-drawn-clip" clipPathUnits="objectBoundingBox">
-              <path d="
+              <path
+                d="
                 M 0.02 0.03
                 Q 0.01 0.015, 0.05 0.02
                 Q 0.15 0.01, 0.25 0.025
@@ -114,24 +180,29 @@ const hours = [
                 Q 0.005 0.35, 0.025 0.25
                 Q 0.01 0.15, 0.02 0.03
                 Z
-              " />
+              "
+              ></path>
             </clipPath>
           </defs>
         </svg>
-        
+
         <!-- Image with clip -->
         <div class="hand-drawn-frame">
-          <img 
-            src="/map.webp" 
+          <img
+            src="/map.webp"
             alt="Mappa di Panima"
             class="w-full"
             loading="lazy"
           />
         </div>
-        
+
         <!-- Hand-drawn border overlay -->
-        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path 
+        <svg
+          class="absolute inset-0 w-full h-full pointer-events-none"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <path
             d="
               M 2 3
               Q 1 1.5, 5 2
@@ -162,8 +233,7 @@ const hours = [
             stroke-width="0.5"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="opacity-60"
-          />
+            class="opacity-60"></path>
         </svg>
       </div>
     </div>
